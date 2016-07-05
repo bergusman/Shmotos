@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		AD2665091D2A78FE006D449B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2665081D2A78FE006D449B /* AppDelegate.swift */; };
-		AD26650B1D2A78FE006D449B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD26650A1D2A78FE006D449B /* ViewController.swift */; };
-		AD26650E1D2A78FE006D449B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD26650C1D2A78FE006D449B /* Main.storyboard */; };
 		AD2665101D2A78FE006D449B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD26650F1D2A78FE006D449B /* Assets.xcassets */; };
 		AD2665131D2A78FE006D449B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2665111D2A78FE006D449B /* LaunchScreen.storyboard */; };
+		AD26651C1D2A9B6B006D449B /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD26651A1D2A9B6B006D449B /* GridViewController.swift */; };
+		AD26651D1D2A9B6B006D449B /* GridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD26651B1D2A9B6B006D449B /* GridViewController.xib */; };
+		AD7C5CC41D2AF90200636853 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5CC21D2AF90200636853 /* ListViewController.swift */; };
+		AD7C5CC51D2AF90200636853 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7C5CC31D2AF90200636853 /* ListViewController.xib */; };
+		AD7C5CCA1D2AFB0300636853 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5CC81D2AFB0300636853 /* GridCell.swift */; };
+		AD7C5CCB1D2AFB0300636853 /* GridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7C5CC91D2AFB0300636853 /* GridCell.xib */; };
+		ADB318B61D2B06330073FE59 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB318B51D2B06330073FE59 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD2665051D2A78FE006D449B /* Shmotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shmotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2665081D2A78FE006D449B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD26650A1D2A78FE006D449B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AD26650D1D2A78FE006D449B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD26650F1D2A78FE006D449B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD2665121D2A78FE006D449B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD2665141D2A78FE006D449B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD26651A1D2A9B6B006D449B /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		AD26651B1D2A9B6B006D449B /* GridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridViewController.xib; sourceTree = "<group>"; };
+		AD7C5CC21D2AF90200636853 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		AD7C5CC31D2AF90200636853 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		AD7C5CC81D2AFB0300636853 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		AD7C5CC91D2AFB0300636853 /* GridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCell.xib; sourceTree = "<group>"; };
+		ADB318B51D2B06330073FE59 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,35 @@
 		AD2665071D2A78FE006D449B /* Shmotos */ = {
 			isa = PBXGroup;
 			children = (
+				AD7C5CC71D2AFAE800636853 /* Grid */,
+				AD7C5CC61D2AFAE400636853 /* List */,
 				AD2665081D2A78FE006D449B /* AppDelegate.swift */,
-				AD26650A1D2A78FE006D449B /* ViewController.swift */,
-				AD26650C1D2A78FE006D449B /* Main.storyboard */,
+				ADB318B51D2B06330073FE59 /* Helper.swift */,
 				AD26650F1D2A78FE006D449B /* Assets.xcassets */,
 				AD2665111D2A78FE006D449B /* LaunchScreen.storyboard */,
 				AD2665141D2A78FE006D449B /* Info.plist */,
 			);
 			path = Shmotos;
+			sourceTree = "<group>";
+		};
+		AD7C5CC61D2AFAE400636853 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				AD7C5CC21D2AF90200636853 /* ListViewController.swift */,
+				AD7C5CC31D2AF90200636853 /* ListViewController.xib */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		AD7C5CC71D2AFAE800636853 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				AD7C5CC81D2AFB0300636853 /* GridCell.swift */,
+				AD7C5CC91D2AFB0300636853 /* GridCell.xib */,
+				AD26651A1D2A9B6B006D449B /* GridViewController.swift */,
+				AD26651B1D2A9B6B006D449B /* GridViewController.xib */,
+			);
+			name = Grid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +127,7 @@
 				TargetAttributes = {
 					AD2665041D2A78FE006D449B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = P8BYXEZ6KH;
 					};
 				};
 			};
@@ -122,9 +154,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD26651D1D2A9B6B006D449B /* GridViewController.xib in Resources */,
+				AD7C5CCB1D2AFB0300636853 /* GridCell.xib in Resources */,
 				AD2665131D2A78FE006D449B /* LaunchScreen.storyboard in Resources */,
+				AD7C5CC51D2AF90200636853 /* ListViewController.xib in Resources */,
 				AD2665101D2A78FE006D449B /* Assets.xcassets in Resources */,
-				AD26650E1D2A78FE006D449B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +169,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD26650B1D2A78FE006D449B /* ViewController.swift in Sources */,
 				AD2665091D2A78FE006D449B /* AppDelegate.swift in Sources */,
+				AD7C5CC41D2AF90200636853 /* ListViewController.swift in Sources */,
+				ADB318B61D2B06330073FE59 /* Helper.swift in Sources */,
+				AD26651C1D2A9B6B006D449B /* GridViewController.swift in Sources */,
+				AD7C5CCA1D2AFB0300636853 /* GridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AD26650C1D2A78FE006D449B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD26650D1D2A78FE006D449B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AD2665111D2A78FE006D449B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -249,10 +278,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Shmotos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sexy.bergusman.Shmotos;
+				PRODUCT_BUNDLE_IDENTIFIER = sexy.bergusman.shmotos2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -260,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Shmotos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sexy.bergusman.Shmotos;
+				PRODUCT_BUNDLE_IDENTIFIER = sexy.bergusman.shmotos2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -286,6 +321,7 @@
 				AD2665191D2A78FE006D449B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

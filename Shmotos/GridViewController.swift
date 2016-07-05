@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class GridViewController: UIViewController, UICollectionViewDataSource {
+class GridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -17,6 +17,7 @@ class GridViewController: UIViewController, UICollectionViewDataSource {
         collectionView.registerNib(GridCell.nib, forCellWithReuseIdentifier: "cell")
     }
     
+    var asset: PHAsset?
     var assets: PHAssetCollection?
     var result: PHFetchResult!
     
@@ -36,20 +37,45 @@ class GridViewController: UIViewController, UICollectionViewDataSource {
         }
  */
         
+        cell.upImageView.backgroundColor = UIColor.clearColor()
+        
+        if asset.representsBurst {
+            cell.upImageView.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.4)
+        }
+        if asset.favorite {
+            cell.upImageView.backgroundColor = UIColor.yellowColor().colorWithAlphaComponent(0.4)
+        }
+        if asset.hidden {
+            cell.upImageView.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.4)
+        }
+        
         let options = PHImageRequestOptions()
         options.version = .Current
         //options.networkAccessAllowed = true
-        options.deliveryMode = .Opportunistic
-        options.resizeMode = .None
+        //options.deliveryMode = .Opportunistic
+        //options.resizeMode = .None
         
-        PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: CGSizeMake(400, 400), contentMode: .AspectFill, options: options) { (image, info) in
+        PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: CGSizeMake(200, 200), contentMode: .AspectFill, options: options) { (image, info) in
             if let image = image {
                 print("\(image.size) \(image.scale)")
                 cell.imageView.image = image
             }
-            
         }
+        
         return cell
+    }
+    
+    // MARK: - UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        
+        let asset = result[indexPath.item] as! PHAsset
+        if asset.representsBurst {
+            let vc = GridViewController()
+            vc.asset = asset
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     // MARK: - UIViewController
@@ -58,8 +84,23 @@ class GridViewController: UIViewController, UICollectionViewDataSource {
         super.viewDidLoad()
         setupCollectionView()
         
-        result = PHAsset.fetchAssetsInAssetCollection(assets!, options: nil)
-        navigationItem.title = String(result.count)
+        if let assets = assets {
+            result = PHAsset.fetchAssetsInAssetCollection(assets, options: nil)
+            navigationItem.title = String(result.count)
+        } else if let asset = asset {
+            let options = PHFetchOptions()
+            options.includeAllBurstAssets = true
+            result = PHAsset.fetchAssetsWithBurstIdentifier(asset.burstIdentifier!, options: options)
+            navigationItem.title = String(result.count)
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if result.count > 0 {
+            let indexPath = NSIndexPath(forItem: result.count - 1, inSection: 0)
+            collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Top, animated: false)
+        }
     }
 
 }

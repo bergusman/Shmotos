@@ -12,6 +12,9 @@
 		AD2665131D2A78FE006D449B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2665111D2A78FE006D449B /* LaunchScreen.storyboard */; };
 		AD26651C1D2A9B6B006D449B /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD26651A1D2A9B6B006D449B /* GridViewController.swift */; };
 		AD26651D1D2A9B6B006D449B /* GridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD26651B1D2A9B6B006D449B /* GridViewController.xib */; };
+		AD4321421D2BE1AF00D24EC8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4321401D2BE1AF00D24EC8 /* MapViewController.swift */; };
+		AD4321431D2BE1AF00D24EC8 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4321411D2BE1AF00D24EC8 /* MapViewController.xib */; };
+		AD4321451D2BE1BD00D24EC8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4321441D2BE1BD00D24EC8 /* MapKit.framework */; };
 		AD7C5CC41D2AF90200636853 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5CC21D2AF90200636853 /* ListViewController.swift */; };
 		AD7C5CC51D2AF90200636853 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7C5CC31D2AF90200636853 /* ListViewController.xib */; };
 		AD7C5CCA1D2AFB0300636853 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5CC81D2AFB0300636853 /* GridCell.swift */; };
@@ -27,6 +30,9 @@
 		AD2665141D2A78FE006D449B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD26651A1D2A9B6B006D449B /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		AD26651B1D2A9B6B006D449B /* GridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridViewController.xib; sourceTree = "<group>"; };
+		AD4321401D2BE1AF00D24EC8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AD4321411D2BE1AF00D24EC8 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		AD4321441D2BE1BD00D24EC8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AD7C5CC21D2AF90200636853 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AD7C5CC31D2AF90200636853 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		AD7C5CC81D2AFB0300636853 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4321451D2BE1BD00D24EC8 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,7 @@
 		AD2664FC1D2A78FE006D449B = {
 			isa = PBXGroup;
 			children = (
+				AD4321441D2BE1BD00D24EC8 /* MapKit.framework */,
 				AD2665071D2A78FE006D449B /* Shmotos */,
 				AD2665061D2A78FE006D449B /* Products */,
 			);
@@ -64,6 +72,7 @@
 		AD2665071D2A78FE006D449B /* Shmotos */ = {
 			isa = PBXGroup;
 			children = (
+				AD43213F1D2BE1A300D24EC8 /* Map */,
 				AD7C5CC71D2AFAE800636853 /* Grid */,
 				AD7C5CC61D2AFAE400636853 /* List */,
 				AD2665081D2A78FE006D449B /* AppDelegate.swift */,
@@ -73,6 +82,15 @@
 				AD2665141D2A78FE006D449B /* Info.plist */,
 			);
 			path = Shmotos;
+			sourceTree = "<group>";
+		};
+		AD43213F1D2BE1A300D24EC8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				AD4321401D2BE1AF00D24EC8 /* MapViewController.swift */,
+				AD4321411D2BE1AF00D24EC8 /* MapViewController.xib */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		AD7C5CC61D2AFAE400636853 /* List */ = {
@@ -128,6 +146,11 @@
 					AD2665041D2A78FE006D449B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = P8BYXEZ6KH;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -155,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD26651D1D2A9B6B006D449B /* GridViewController.xib in Resources */,
+				AD4321431D2BE1AF00D24EC8 /* MapViewController.xib in Resources */,
 				AD7C5CCB1D2AFB0300636853 /* GridCell.xib in Resources */,
 				AD2665131D2A78FE006D449B /* LaunchScreen.storyboard in Resources */,
 				AD7C5CC51D2AF90200636853 /* ListViewController.xib in Resources */,
@@ -170,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD2665091D2A78FE006D449B /* AppDelegate.swift in Sources */,
+				AD4321421D2BE1AF00D24EC8 /* MapViewController.swift in Sources */,
 				AD7C5CC41D2AF90200636853 /* ListViewController.swift in Sources */,
 				ADB318B61D2B06330073FE59 /* Helper.swift in Sources */,
 				AD26651C1D2A9B6B006D449B /* GridViewController.swift in Sources */,

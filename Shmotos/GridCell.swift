@@ -11,6 +11,7 @@ import UIKit
 class GridCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var upImageView: UIImageView!
 
     // MARK: - Nibbing
 

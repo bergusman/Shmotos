@@ -16,18 +16,26 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5c5-17-zoT">
                         <rect key="frame" x="0.0" y="0.0" width="109" height="135"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t82-op-mYI">
+                        <rect key="frame" x="0.0" y="0.0" width="109" height="135"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="t82-op-mYI" secondAttribute="bottom" id="3nL-dU-YP4"/>
                 <constraint firstAttribute="trailing" secondItem="5c5-17-zoT" secondAttribute="trailing" id="4RV-R1-twN"/>
+                <constraint firstItem="t82-op-mYI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BKG-L0-QPt"/>
                 <constraint firstItem="5c5-17-zoT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Gs5-Br-ndV"/>
+                <constraint firstItem="t82-op-mYI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Kgz-dH-Qj8"/>
                 <constraint firstAttribute="bottom" secondItem="5c5-17-zoT" secondAttribute="bottom" id="LZD-Z1-EIA"/>
+                <constraint firstAttribute="trailing" secondItem="t82-op-mYI" secondAttribute="trailing" id="V7X-AL-hSw"/>
                 <constraint firstItem="5c5-17-zoT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Z6R-PZ-mbq"/>
             </constraints>
             <size key="customSize" width="109" height="135"/>
             <connections>
                 <outlet property="imageView" destination="5c5-17-zoT" id="vHD-ws-hVP"/>
+                <outlet property="upImageView" destination="t82-op-mYI" id="AhF-tK-2HN"/>
             </connections>
             <point key="canvasLocation" x="517.5" y="345.5"/>
         </collectionViewCell>

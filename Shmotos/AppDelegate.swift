@@ -25,11 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let vc = ListViewController()
         let nc = UINavigationController(rootViewController: vc)
+        nc.tabBarItem.title = "List"
         
-        window?.rootViewController = nc
+        let mvc = MapViewController()
+        let mnc = UINavigationController(rootViewController: mvc)
+        mnc.tabBarItem.title = "Map"
         
-        let result = PHAsset.fetchAssetsWithOptions(nil)
-        print(result.count)
+        let tbc = UITabBarController()
+        tbc.viewControllers = [nc, mnc]
+        
+        window?.rootViewController = tbc
         
         return true
     }

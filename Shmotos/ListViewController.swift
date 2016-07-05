@@ -20,6 +20,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var list: PHCollectionList?
     var results: [PHFetchResult] = []
+    var titles: [String] = []
 
     // MARK: - UITableViewDataSource
     
@@ -55,15 +56,41 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let assets = item as? PHAssetCollection {
             info.append(assets.assetCollectionType.description)
             info.append(assets.assetCollectionSubtype.description)
-            cell?.textLabel!.text = (cell?.textLabel!.text)! + " — \(assets.estimatedAssetCount)"
+            if assets.estimatedAssetCount != NSNotFound {
+                cell?.textLabel!.text = (cell?.textLabel!.text)! + " — \(assets.estimatedAssetCount)"
+            }
+            
         }
         if let list = item as? PHCollectionList {
             info.append(list.collectionListType .description)
             info.append(list.collectionListSubtype.description)
-            
         }
         
-        cell!.detailTextLabel!.text = info.joinWithSeparator(", ")
+        var operations = [String]()
+        
+        if item.canPerformEditOperation(.AddContent) {
+            operations.append("AC")
+        }
+        if item.canPerformEditOperation(.CreateContent) {
+            operations.append("CC")
+        }
+        if item.canPerformEditOperation(.DeleteContent) {
+            operations.append("DC")
+        }
+        if item.canPerformEditOperation(.RemoveContent) {
+            operations.append("RC")
+        }
+        if item.canPerformEditOperation(.RearrangeContent) {
+            operations.append("MC")
+        }
+        if item.canPerformEditOperation(.Delete) {
+            operations.append("D")
+        }
+        if item.canPerformEditOperation(.Rename) {
+            operations.append("R")
+        }
+        
+        cell!.detailTextLabel!.text = info.joinWithSeparator(", ") + (operations.count > 0 ? ", " : "")  + operations.joinWithSeparator(" ")
         
         return cell!
     }
@@ -79,15 +106,21 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let list = item as? PHCollectionList {
             let vc = ListViewController()
             vc.list = list
-            print(list.localizedLocationNames)
+            vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         } else if let assets = item as? PHAssetCollection {
             let vc = GridViewController()
             vc.assets = assets
-            
-            print(assets.localizedLocationNames)
+            vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if titles.count > 0 {
+            return titles[section]
+        }
+        return nil
     }
     
     // MARK: - UIViewController
@@ -115,6 +148,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             results.append(PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .Any, options: options))
             results.append(PHAssetCollection.fetchAssetCollectionsWithType(.Moment, subtype: .Any, options: options))
             
+            titles = ["Folders", "Smart Folders", "Moment Lists", "Albums", "Smart Albums", "Moments"]
+            
             //let result = PHCollectionList.fetchCollectionListsWithType(.Folder, subtype: .Any, options: options)
             //result = PHAssetCollection.fetchAssetCollectionsWithType(.Album, subtype: .Any, options: options)
         }
@@ -129,8 +164,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Album, AlbumRegular
         // Album, AlbumCloudShared
         // Album, AlbumMyPhotoStream
- 
-        
     }
 
 }

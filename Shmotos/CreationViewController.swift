@@ -38,7 +38,7 @@ class CreationViewController: UIViewController {
                     print(input)
                     print(info)
                     
-                    input?.mediaSubtypes = .PhotoScreenshot
+                    //input?.mediaSubtypes = .PhotoScreenshot
                 })
                 
             }

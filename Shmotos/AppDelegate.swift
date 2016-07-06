@@ -35,8 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let cnc = UINavigationController(rootViewController: cvc)
         cnc.tabBarItem.title = "Creation"
         
+        let tvc = TestViewController()
+        let tnc = UINavigationController(rootViewController: tvc)
+        tnc.tabBarItem.title = "Tests"
+        
         let tbc = UITabBarController()
-        tbc.viewControllers = [nc, mnc, cnc]
+        tbc.viewControllers = [nc, mnc, cnc, tnc]
         
         window?.rootViewController = tbc
         

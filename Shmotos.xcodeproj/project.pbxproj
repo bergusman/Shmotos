@@ -26,6 +26,8 @@
 		AD9C54EB1D2CAD7800462A2C /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C54E91D2CAD7800462A2C /* ResourcesViewController.swift */; };
 		AD9C54EC1D2CAD7800462A2C /* ResourcesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9C54EA1D2CAD7800462A2C /* ResourcesViewController.xib */; };
 		AD9C54EE1D2CC8A900462A2C /* arnold.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD9C54ED1D2CC8A900462A2C /* arnold.jpg */; };
+		AD9C54F21D2CD4B600462A2C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C54F01D2CD4B600462A2C /* TestViewController.swift */; };
+		AD9C54F31D2CD4B600462A2C /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9C54F11D2CD4B600462A2C /* TestViewController.xib */; };
 		ADB318B61D2B06330073FE59 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB318B51D2B06330073FE59 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		AD9C54E91D2CAD7800462A2C /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		AD9C54EA1D2CAD7800462A2C /* ResourcesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourcesViewController.xib; sourceTree = "<group>"; };
 		AD9C54ED1D2CC8A900462A2C /* arnold.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arnold.jpg; sourceTree = "<group>"; };
+		AD9C54F01D2CD4B600462A2C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		AD9C54F11D2CD4B600462A2C /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		ADB318B51D2B06330073FE59 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +90,7 @@
 		AD2665071D2A78FE006D449B /* Shmotos */ = {
 			isa = PBXGroup;
 			children = (
+				AD9C54EF1D2CD4AB00462A2C /* Test */,
 				AD9C54E81D2CAC6F00462A2C /* Photo */,
 				AD9C54DF1D2CA7D900462A2C /* Creation */,
 				AD43213F1D2BE1A300D24EC8 /* Map */,
@@ -148,6 +153,15 @@
 				AD9C54EA1D2CAD7800462A2C /* ResourcesViewController.xib */,
 			);
 			name = Photo;
+			sourceTree = "<group>";
+		};
+		AD9C54EF1D2CD4AB00462A2C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				AD9C54F01D2CD4B600462A2C /* TestViewController.swift */,
+				AD9C54F11D2CD4B600462A2C /* TestViewController.xib */,
+			);
+			name = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +231,7 @@
 				AD26651D1D2A9B6B006D449B /* GridViewController.xib in Resources */,
 				AD9C54E71D2CAC6B00462A2C /* PhotoViewController.xib in Resources */,
 				AD4321431D2BE1AF00D24EC8 /* MapViewController.xib in Resources */,
+				AD9C54F31D2CD4B600462A2C /* TestViewController.xib in Resources */,
 				AD7C5CCB1D2AFB0300636853 /* GridCell.xib in Resources */,
 				AD2665131D2A78FE006D449B /* LaunchScreen.storyboard in Resources */,
 				AD7C5CC51D2AF90200636853 /* ListViewController.xib in Resources */,
@@ -234,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9C54F21D2CD4B600462A2C /* TestViewController.swift in Sources */,
 				AD2665091D2A78FE006D449B /* AppDelegate.swift in Sources */,
 				AD4321421D2BE1AF00D24EC8 /* MapViewController.swift in Sources */,
 				AD7C5CC41D2AF90200636853 /* ListViewController.swift in Sources */,

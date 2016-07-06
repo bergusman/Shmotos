@@ -102,3 +102,76 @@ extension PHCollectionListSubtype {
         }
     }
 }
+
+extension PHAssetResourceType {
+    var description: String {
+        switch self {
+        case .Photo:
+            return "Photo"
+        case .Video:
+            return "Video"
+        case .Audio:
+            return "Audio"
+        case .AlternatePhoto:
+            return "AlternatePhoto"
+        case .FullSizePhoto:
+            return "FullSizePhoto"
+        case .FullSizeVideo:
+            return "FullSizeVideo"
+        case .AdjustmentData:
+            return "AdjustmentData"
+        case .AdjustmentBasePhoto:
+            return "AdjustmentBasePhoto"
+        case .PairedVideo:
+            return "PairedVideo"
+        }
+    }
+}
+
+extension PHAssetMediaType {
+    var description: String {
+        switch self {
+        case .Unknown:
+            return "Unknown"
+        case .Image:
+            return "Image"
+        case .Video:
+            return "Video"
+        case .Audio:
+            return "Audio"
+        }
+    }
+}
+
+extension PHAssetMediaSubtype {
+    var description: String {
+        var items = [String]()
+        
+        if self.contains(.None) {
+            items.append("None")
+        }
+        if self.contains(.PhotoPanorama) {
+            items.append("PhotoPanorama")
+        }
+        if self.contains(.PhotoHDR) {
+            items.append("PhotoHDR")
+        }
+        if self.contains(.PhotoScreenshot) {
+            items.append("PhotoScreenshot")
+        }
+        if self.contains(.PhotoLive) {
+            items.append("PhotoLive")
+        }
+        if self.contains(.VideoStreamed) {
+            items.append("VideoStreamed")
+        }
+        if self.contains(.VideoHighFrameRate) {
+            items.append("VideoHighFrameRate")
+        }
+        if self.contains(.VideoTimelapse) {
+            items.append("VideoTimelapse")
+        }
+        
+        return items.joinWithSeparator(", ")
+    }
+}

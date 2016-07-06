@@ -31,8 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mnc = UINavigationController(rootViewController: mvc)
         mnc.tabBarItem.title = "Map"
         
+        let cvc = CreationViewController()
+        let cnc = UINavigationController(rootViewController: cvc)
+        cnc.tabBarItem.title = "Creation"
+        
         let tbc = UITabBarController()
-        tbc.viewControllers = [nc, mnc]
+        tbc.viewControllers = [nc, mnc, cnc]
         
         window?.rootViewController = tbc
         

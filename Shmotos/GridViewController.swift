@@ -55,12 +55,16 @@ class GridViewController: UIViewController, UICollectionViewDataSource, UICollec
         //options.deliveryMode = .Opportunistic
         //options.resizeMode = .None
         
+        
         PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: CGSizeMake(200, 200), contentMode: .AspectFill, options: options) { (image, info) in
             if let image = image {
                 print("\(image.size) \(image.scale)")
                 cell.imageView.image = image
             }
         }
+        
+        let resources = PHAssetResource.assetResourcesForAsset(asset)
+        cell.label.text = String(resources.count)
         
         return cell
     }
@@ -71,8 +75,12 @@ class GridViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         
         let asset = result[indexPath.item] as! PHAsset
-        if asset.representsBurst {
+        if asset.representsBurst && asset.localIdentifier != self.asset?.localIdentifier {
             let vc = GridViewController()
+            vc.asset = asset
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = PhotoViewController()
             vc.asset = asset
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -93,14 +101,16 @@ class GridViewController: UIViewController, UICollectionViewDataSource, UICollec
             result = PHAsset.fetchAssetsWithBurstIdentifier(asset.burstIdentifier!, options: options)
             navigationItem.title = String(result.count)
         }
+        
+        if result.count > 0 {
+            //let indexPath = NSIndexPath(forItem: result.count - 1, inSection: 0)
+            //collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Top, animated: false)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if result.count > 0 {
-            let indexPath = NSIndexPath(forItem: result.count - 1, inSection: 0)
-            collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Top, animated: false)
-        }
+        
     }
 
 }

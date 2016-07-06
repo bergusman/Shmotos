@@ -19,6 +19,13 @@
 		AD7C5CC51D2AF90200636853 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7C5CC31D2AF90200636853 /* ListViewController.xib */; };
 		AD7C5CCA1D2AFB0300636853 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5CC81D2AFB0300636853 /* GridCell.swift */; };
 		AD7C5CCB1D2AFB0300636853 /* GridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7C5CC91D2AFB0300636853 /* GridCell.xib */; };
+		AD9C54E21D2CA7F600462A2C /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C54E01D2CA7F600462A2C /* CreationViewController.swift */; };
+		AD9C54E31D2CA7F600462A2C /* CreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9C54E11D2CA7F600462A2C /* CreationViewController.xib */; };
+		AD9C54E61D2CAC6B00462A2C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C54E41D2CAC6B00462A2C /* PhotoViewController.swift */; };
+		AD9C54E71D2CAC6B00462A2C /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9C54E51D2CAC6B00462A2C /* PhotoViewController.xib */; };
+		AD9C54EB1D2CAD7800462A2C /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C54E91D2CAD7800462A2C /* ResourcesViewController.swift */; };
+		AD9C54EC1D2CAD7800462A2C /* ResourcesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9C54EA1D2CAD7800462A2C /* ResourcesViewController.xib */; };
+		AD9C54EE1D2CC8A900462A2C /* arnold.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD9C54ED1D2CC8A900462A2C /* arnold.jpg */; };
 		ADB318B61D2B06330073FE59 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB318B51D2B06330073FE59 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +44,13 @@
 		AD7C5CC31D2AF90200636853 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		AD7C5CC81D2AFB0300636853 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		AD7C5CC91D2AFB0300636853 /* GridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCell.xib; sourceTree = "<group>"; };
+		AD9C54E01D2CA7F600462A2C /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		AD9C54E11D2CA7F600462A2C /* CreationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreationViewController.xib; sourceTree = "<group>"; };
+		AD9C54E41D2CAC6B00462A2C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		AD9C54E51D2CAC6B00462A2C /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
+		AD9C54E91D2CAD7800462A2C /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		AD9C54EA1D2CAD7800462A2C /* ResourcesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourcesViewController.xib; sourceTree = "<group>"; };
+		AD9C54ED1D2CC8A900462A2C /* arnold.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arnold.jpg; sourceTree = "<group>"; };
 		ADB318B51D2B06330073FE59 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +86,8 @@
 		AD2665071D2A78FE006D449B /* Shmotos */ = {
 			isa = PBXGroup;
 			children = (
+				AD9C54E81D2CAC6F00462A2C /* Photo */,
+				AD9C54DF1D2CA7D900462A2C /* Creation */,
 				AD43213F1D2BE1A300D24EC8 /* Map */,
 				AD7C5CC71D2AFAE800636853 /* Grid */,
 				AD7C5CC61D2AFAE400636853 /* List */,
@@ -111,6 +127,27 @@
 				AD26651B1D2A9B6B006D449B /* GridViewController.xib */,
 			);
 			name = Grid;
+			sourceTree = "<group>";
+		};
+		AD9C54DF1D2CA7D900462A2C /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				AD9C54ED1D2CC8A900462A2C /* arnold.jpg */,
+				AD9C54E01D2CA7F600462A2C /* CreationViewController.swift */,
+				AD9C54E11D2CA7F600462A2C /* CreationViewController.xib */,
+			);
+			name = Creation;
+			sourceTree = "<group>";
+		};
+		AD9C54E81D2CAC6F00462A2C /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				AD9C54E41D2CAC6B00462A2C /* PhotoViewController.swift */,
+				AD9C54E51D2CAC6B00462A2C /* PhotoViewController.xib */,
+				AD9C54E91D2CAD7800462A2C /* ResourcesViewController.swift */,
+				AD9C54EA1D2CAD7800462A2C /* ResourcesViewController.xib */,
+			);
+			name = Photo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,10 +215,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD26651D1D2A9B6B006D449B /* GridViewController.xib in Resources */,
+				AD9C54E71D2CAC6B00462A2C /* PhotoViewController.xib in Resources */,
 				AD4321431D2BE1AF00D24EC8 /* MapViewController.xib in Resources */,
 				AD7C5CCB1D2AFB0300636853 /* GridCell.xib in Resources */,
 				AD2665131D2A78FE006D449B /* LaunchScreen.storyboard in Resources */,
 				AD7C5CC51D2AF90200636853 /* ListViewController.xib in Resources */,
+				AD9C54E31D2CA7F600462A2C /* CreationViewController.xib in Resources */,
+				AD9C54EC1D2CAD7800462A2C /* ResourcesViewController.xib in Resources */,
+				AD9C54EE1D2CC8A900462A2C /* arnold.jpg in Resources */,
 				AD2665101D2A78FE006D449B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +239,10 @@
 				AD7C5CC41D2AF90200636853 /* ListViewController.swift in Sources */,
 				ADB318B61D2B06330073FE59 /* Helper.swift in Sources */,
 				AD26651C1D2A9B6B006D449B /* GridViewController.swift in Sources */,
+				AD9C54E61D2CAC6B00462A2C /* PhotoViewController.swift in Sources */,
+				AD9C54EB1D2CAD7800462A2C /* ResourcesViewController.swift in Sources */,
 				AD7C5CCA1D2AFB0300636853 /* GridCell.swift in Sources */,
+				AD9C54E21D2CA7F600462A2C /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

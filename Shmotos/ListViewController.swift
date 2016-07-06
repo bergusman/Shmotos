@@ -8,7 +8,6 @@
 
 import UIKit
 import Photos
-import PhotosUI
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -40,6 +39,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if cell == nil {
             cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
             cell?.detailTextLabel?.textColor = UIColor.lightGrayColor()
+            cell?.detailTextLabel?.font = UIFont.systemFontOfSize(10)
         }
         
         let item = result[indexPath.row] as! PHCollection
@@ -114,6 +114,9 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }
+        
+        let r = PHCollectionList.fetchCollectionListsContainingCollection(item as! PHCollection, options: nil)
+        print(r)
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -139,6 +142,9 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let options = PHFetchOptions()
             options.includeHiddenAssets = true
             options.includeAssetSourceTypes = [.TypeUserLibrary, .TypeCloudShared, .TypeiTunesSynced]
+            options.sortDescriptors = [NSSortDescriptor(key: "localizedTitle", ascending: true)]
+            
+            results.append(PHCollection.fetchTopLevelUserCollectionsWithOptions(options))
             
             results.append(PHCollectionList.fetchCollectionListsWithType(.Folder, subtype: .Any, options: options))
             results.append(PHCollectionList.fetchCollectionListsWithType(.SmartFolder, subtype: .Any, options: options))
@@ -148,7 +154,19 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             results.append(PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .Any, options: options))
             results.append(PHAssetCollection.fetchAssetCollectionsWithType(.Moment, subtype: .Any, options: options))
             
-            titles = ["Folders", "Smart Folders", "Moment Lists", "Albums", "Smart Albums", "Moments"]
+            titles = ["Top Level User Collections", "Folders", "Smart Folders", "Moment Lists", "Albums", "Smart Albums", "Moments"]
+            
+            
+            // All photos
+            // Favorites
+            // Selfies
+            // Panoramas
+            // Bursts
+            // Screenshots
+            
+            // Sorted user albums
+            
+            // Sorted icloud
             
             //let result = PHCollectionList.fetchCollectionListsWithType(.Folder, subtype: .Any, options: options)
             //result = PHAssetCollection.fetchAssetCollectionsWithType(.Album, subtype: .Any, options: options)

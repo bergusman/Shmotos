@@ -19,6 +19,12 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t82-op-mYI">
                         <rect key="frame" x="0.0" y="0.0" width="109" height="135"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTN-Kh-lDn">
+                        <rect key="frame" x="94.5" y="4" width="10.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -31,10 +37,13 @@
                 <constraint firstAttribute="bottom" secondItem="5c5-17-zoT" secondAttribute="bottom" id="LZD-Z1-EIA"/>
                 <constraint firstAttribute="trailing" secondItem="t82-op-mYI" secondAttribute="trailing" id="V7X-AL-hSw"/>
                 <constraint firstItem="5c5-17-zoT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Z6R-PZ-mbq"/>
+                <constraint firstAttribute="trailing" secondItem="hTN-Kh-lDn" secondAttribute="trailing" constant="4" id="Zu2-2N-tCX"/>
+                <constraint firstItem="hTN-Kh-lDn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="x0Y-gv-KAu"/>
             </constraints>
             <size key="customSize" width="109" height="135"/>
             <connections>
                 <outlet property="imageView" destination="5c5-17-zoT" id="vHD-ws-hVP"/>
+                <outlet property="label" destination="hTN-Kh-lDn" id="dAn-PZ-pto"/>
                 <outlet property="upImageView" destination="t82-op-mYI" id="AhF-tK-2HN"/>
             </connections>
             <point key="canvasLocation" x="517.5" y="345.5"/>
